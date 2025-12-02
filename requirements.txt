@@ -6,3 +6,4 @@ python-dotenv==1.0.1
 httpx==0.28.1
 openai-agents==0.6.1
 pydantic>=2.12.3,<3.0.0
+email-validator>=2.0.0
