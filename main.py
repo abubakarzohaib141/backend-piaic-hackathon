@@ -13,12 +13,18 @@ load_dotenv()
 
 print("Starting main.py...")
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(title="Physical AI Chatbot API")
 
-# Configure CORS
+# Update CORS origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("CORS_ORIGINS", "http://localhost:3000").split(","),
+    allow_origins=[
+        "http://localhost:3000",
+        "https://abubakarzohaib141.github.io",
+        "https://backend-piaic-hackathon-2.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
